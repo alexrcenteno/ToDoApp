@@ -1,0 +1,2 @@
+class CategoryTodo < ApplicationRecord
+end
