@@ -3,10 +3,10 @@ Todo.destroy_all
 Category.destroy_all
 CategoryTodo.destroy_all
 
-user1 = User.create!(name: "Nick", email: "email@email.com", password_digest: "password")
-user2 = User.create!(name: "Annie", email: "email@email.com", password_digest: "password")
-user3 = User.create!(name: "Dallin", email: "email@email.com", password_digest: "password")
-user4 = User.create!(name: "Alex", email: "email@email.com", password_digest: "password")
+user1 = User.create!(name: "Nick", email: "nick@email.com", password_digest: "password")
+user2 = User.create!(name: "Annie", email: "annie@email.com", password_digest: "password")
+user3 = User.create!(name: "Dallin", email: "dallin@email.com", password_digest: "password")
+user4 = User.create!(name: "Alex", email: "alex@email.com", password_digest: "password")
 
 todo1 = Todo.create!(user_id: user1.id, title: "Walk the dog", description: "WALK THE DOG!!!", deadline: "03/12/23", completed: false)
 todo2 = Todo.create!(user_id: user2.id, title: "Clean the bathroom", description: "IT'S DIRTY!!!", deadline: "04/12/23", completed: false)
