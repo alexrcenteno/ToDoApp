@@ -1,0 +1,14 @@
+<h1>All todos</h1>
+<% @todos.each do |todo| %>
+  <h2><%= todo.title %></h2>
+  <p>user_id: <%= todo.user_id %></p>
+  <p>title: <%= todo.title %></p>
+  <p>description: <%= todo.description %></p>
+  <p>deadline: <%= todo.deadline %></p>
+  <p>completed: <%= todo.completed %></p>
+
+  
+<% end %>
+
+<%= link_to "New Todo", new_todo_path %>
+<%= link_to "New Todos", new_todo_path %>

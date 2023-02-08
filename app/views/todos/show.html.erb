@@ -1,0 +1,11 @@
+<h1>Todo info</h1>
+<h2><%= @todo.title %></h2>
+<p>user_id: <%= @todo.user_id %></p>
+<p>title: <%= @todo.title %></p>
+<p>description: <%= @todo.description %></p>
+<p>deadline: <%= @todo.deadline %></p>
+<p>completed: <%= @todo.completed %></p>
+<a href="/todos">Back to all todos</a>
+
+<%= link_to "Edit todo", edit_todo_path(@todo) %>
+<%= link_to "Destroy todo", todo_path(@todo), data: {turbo_method: :delete} %>
