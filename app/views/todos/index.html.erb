@@ -9,6 +9,6 @@
 
   
 <% end %>
-
-<%= link_to "New Todo", new_todo_path %>
-<%= link_to "New Todos", new_todo_path %>
+<% if current_user %>
+  <%= link_to "New Todo", new_todo_path %>
+<% end %>

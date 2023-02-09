@@ -1,7 +1,9 @@
 <h1>All categories</h1>
 <% @categories.each do |category| %>
   <h2><%= category.name %></h2>
-  <%= link_to "New category", new_category_path %>
   <%= link_to "More Info", category %>
 <% end %>
 
+<%if current_user%>
+  <%= link_to "New category", new_category_path %>
+<% end %>
