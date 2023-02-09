@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_action :authenticate_user, except: [:index, :show]
+
   def index
     @todos = Todo.all
     render :index
@@ -15,14 +17,18 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.create(
-      user_id: params[:todo][:user_id],
+    @todo = Todo.new(
+      user_id: current_user.id,
       title: params[:todo][:title],
       description: params[:todo][:description],
       deadline: params[:todo][:deadline],
       completed: params[:todo][:completed],
     )
-    redirect_to "/todos"
+    if @todo.save
+      redirect_to "/todos"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
