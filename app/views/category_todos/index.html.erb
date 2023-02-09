@@ -1,0 +1,8 @@
+<h1>All category_todos</h1>
+<% @category_todos.each do |category_todo| %>
+  <h2>category_todo id: <%= category_todo.id %></h2>
+  <p>category_id: <%= category_todo.category_id %></p>
+  <p>todo_id: <%= category_todo.todo_id %></p>
+<% end %>
+
+<%= link_to "New Category_Todo", new_category_todo_path %>
