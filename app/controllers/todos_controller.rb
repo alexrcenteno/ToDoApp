@@ -33,24 +33,36 @@ class TodosController < ApplicationController
 
   def edit
     @todo = Todo.find_by(id: params[:id])
-    render :edit
+    if @todo.user_id == current_user.id
+      render :edit
+    end
   end
 
   def update
     @todo = Todo.find_by(id: params[:id])
-    @todo.update(
-      user_id: params[:todo][:user_id],
-      title: params[:todo][:title],
-      description: params[:todo][:description],
-      deadline: params[:todo][:deadline],
-      completed: params[:todo][:completed],
-    )
-    redirect_to "/todos"
+    if @todo.user_id == current_user.id
+      if @todo.update(
+        title: params[:todo][:title],
+        description: params[:todo][:description],
+        deadline: params[:todo][:deadline],
+        completed: params[:todo][:completed],
+      )
+        redirect_to "/todos"
+      else
+        render :edit, status: :unprocessable_entity
+      end
+    else
+      redirect_to "/todos", status: :see_other
+    end
   end
 
   def destroy
     @todo = Todo.find_by(id: params[:id])
-    @todo.destroy
-    redirect_to "/todos", status: :see_other
+    if @todo.user_id == current_user.id
+      @todo.destroy
+      redirect_to "/todos", status: :see_other
+    else
+      redirect_to "/cats", status: :see_other
+    end
   end
 end
