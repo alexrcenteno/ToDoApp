@@ -5,4 +5,6 @@
   <p>todo_id: <%= category_todo.todo_id %></p>
 <% end %>
 
-<%= link_to "New Category_Todo", new_category_todo_path %>
+<% if current_user %>
+  <%= link_to "New Category_Todo", new_category_todo_path %>
+<% end %>
