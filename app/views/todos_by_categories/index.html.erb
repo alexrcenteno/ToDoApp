@@ -1,0 +1,18 @@
+<h1>All todo's by category</h1>
+<% @categories.each do |category| %>
+  <h2><%= category.name %></h2>
+
+  <% category.todos.each do |todo|  %>
+  <p><%= todo.title %></p>
+<% end %>
+
+  <%= link_to "More Info", category %>
+<% end %>
+  <% if current_user %>
+<%= link_to "New Todo", new_todo_path %>
+  <% end%>
+
+<%= link_to "All todo's", todos_path %>
+ <%= link_to "All Categories", categories_path %>
+
+

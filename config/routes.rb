@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   get "/login" => "sessions#new"
   get "/logout" => "sessions#destroy"
+
+  get "/todosbycategories" => "todos_by_categories#index"
 end
