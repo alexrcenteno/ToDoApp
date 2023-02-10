@@ -12,19 +12,20 @@
 
 <h1>All categories</h1>
 <% @categories.each do |category| %>
-
-  <div class="card" style="width: 18rem;">
-  <h2><%= category.name %></h2>
+  <div class="card" style="width: 15rem;">
+  <div class="mx-auto" style="width: 200px;">
+  
+</div>
+<div class="mx-auto" style="width: 200px;">
   <img src="https://m.media-amazon.com/images/I/31RvOPlfH7L.png" class="card-img-top" style="width: 5rem;" alt="...">
+</div>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="/category/index" class="btn btn-primary">See Tasks</a>
+    <p class="fs-2"><%= category.name %></p>
   </div>
   <%= link_to "More Info", category %>
   </div>
-
 <% end %>
+
 <%= link_to "New category", new_category_path %>
 <%= link_to "All todo's", todos_path %>
 <%= link_to "All todo's by Category", todosbycategories_path %>
