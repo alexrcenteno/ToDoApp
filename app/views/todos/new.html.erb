@@ -16,6 +16,12 @@
     <%= form.label :completed %>
     <%= form.text_field :completed %>
   </div>
+  <label for="category">Choose a category:</label>
+  <select name="category" id="category">
+    <% Category.all.each do |category|  %>
+    <option value=<%= category.name %> ><%= category.name %></option>
+    <% end %>
+  </select>
   <div>
     <%= form.submit %>
   </div>

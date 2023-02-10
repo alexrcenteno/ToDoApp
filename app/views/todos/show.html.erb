@@ -5,6 +5,10 @@
 <p>description: <%= @todo.description %></p>
 <p>deadline: <%= @todo.deadline %></p>
 <p>completed: <%= @todo.completed %></p>
+<h4>Categories:</h4>
+<% @todo.categories.each do |category|  %>
+  <p><%= category.name %></p>
+<% end %>
 
 <a href="/todos">Back to all todos</a>
 
