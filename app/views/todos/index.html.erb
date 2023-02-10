@@ -7,6 +7,7 @@
   <p>description: <%= todo.description %></p>
   <p>deadline: <%= todo.deadline %></p>
   <p>completed: <%= todo.completed %></p>
+  <%= link_to "More Info", todo %>
 <% end %>
 
 
@@ -14,3 +15,4 @@
 <% if current_user %>
   <%= link_to "New Todo", new_todo_path %>
 <% end%>
+ <%= link_to "All Categories", categories_path %>

@@ -25,7 +25,10 @@
   </div>
 
 <% end %>
+<%= link_to "New category", new_category_path %>
+<%= link_to "All todo's", todos_path %>
+<%= link_to "All todo's by Category", todosbycategories_path %>
 
-<%if current_user%>
+<% if current_user %>
   <%= link_to "New category", new_category_path %>
 <% end %>
