@@ -1,3 +1,4 @@
+<% if current_user %>
 <h1>New Todo</h1>
 <%= form_with model: @todo do |form| %>
   <div>
@@ -25,4 +26,5 @@
   <div>
     <%= form.submit %>
   </div>
+  <% end%>
 <% end%>

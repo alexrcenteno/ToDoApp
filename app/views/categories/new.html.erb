@@ -1,4 +1,4 @@
-
+<% if current_user %>
 <h1>New category</h1>
 <%= form_with model: @category do |form| %>
   <div>
@@ -8,4 +8,5 @@
   <div>
     <%= form.submit %>
   </div>
-<% end %>
+  <% end%>
+<% end%>
