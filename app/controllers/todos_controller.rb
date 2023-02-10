@@ -24,6 +24,15 @@ class TodosController < ApplicationController
       deadline: params[:todo][:deadline],
       completed: params[:todo][:completed],
     )
+    # TODO: This is new stuff!!!
+    if params[:category]
+      if (Category.find_by(name: params[:category]))
+        CategoryTodo.create(todo_id: @todo.id, category_id: Category.find_by(name: params[:category]).id)
+        # else
+        #   cat = Category.create(name: params[:category])
+        #   CategoryTodo.create(todo_id: @todo.id, category_id: cat.id)
+      end
+    end
     if @todo.save
       redirect_to "/todos"
     else
