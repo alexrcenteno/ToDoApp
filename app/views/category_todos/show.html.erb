@@ -1,0 +1,9 @@
+<h1>Category_Todo info</h1>
+
+<p><%= @category_todo.category_id %></p>
+<p><%= @category_todo.todo_id %></p>
+
+<a href="/category_todos">Back to all todos</a>
+
+<%= link_to "Edit category_todo", edit_todo_path(@category_todo) %>
+<%= link_to "Destroy category_todo", todo_path(@category_todo), data: {turbo_method: :delete} %>

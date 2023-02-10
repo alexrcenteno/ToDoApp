@@ -1,0 +1,14 @@
+<h1>New Category_Todo</h1>
+<%= form_with model: @category_todo do |form| %>
+  <div>
+    <%= form.label :category_id %>
+    <%= form.text_field :category_id %>
+  </div>
+  <div>
+    <%= form.label :todo_id %>
+    <%= form.text_field :todo_id %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end%>
