@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception, unless: -> { request.format.json? }
+  helper_method :current_user
 
+  protect_from_forgery with: :exception, unless: -> { request.format.json? }
   # def current_user
   #   auth_headers = request.headers["Authorization"]
   #   if auth_headers.present? && auth_headers[/(?<=\A(Bearer ))\S+\z/]

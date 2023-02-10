@@ -1,8 +1,31 @@
+<div class="card">
+  <div class="card-header">
+    Quote
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>" People say nothing is impossible, but I do nothing every day.”</p>
+      <footer class="blockquote-footer"> Winnie the Pooh <cite></footer>
+    </blockquote>
+  </div>
+</div>
+
 <h1>All categories</h1>
 <% @categories.each do |category| %>
-  <h2><%= category.name %></h2>
+  <div class="card" style="width: 15rem;">
+  <div class="mx-auto" style="width: 200px;">
+  
+</div>
+<div class="mx-auto" style="width: 200px;">
+  <img src="https://m.media-amazon.com/images/I/31RvOPlfH7L.png" class="card-img-top" style="width: 5rem;" alt="...">
+</div>
+  <div class="card-body">
+    <p class="fs-2"><%= category.name %></p>
+  </div>
   <%= link_to "More Info", category %>
+  </div>
 <% end %>
+
 <%= link_to "New category", new_category_path %>
 <%= link_to "All todo's", todos_path %>
 <%= link_to "All todo's by Category", todosbycategories_path %>
