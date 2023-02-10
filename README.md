@@ -1,24 +1,11 @@
-# README
+# To Do App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## DEVELOPERS
+1. Annie Hwang
+2. Nick Gonzalez
+3. Dallin Forsyth
+4. Alex Centeno
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Date Started/Completed
+     2/8/23-2/10/23
+#### Status: Incomplete
