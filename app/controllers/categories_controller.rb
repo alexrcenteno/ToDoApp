@@ -15,10 +15,10 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.create(
+    @category = Category.new(
       name: params[:category][:name],
     )
-    if @todo.save
+    if @category.save
       redirect_to "/categories"
     else
       render :new, status: :unprocessable_entity
