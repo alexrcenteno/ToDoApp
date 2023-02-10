@@ -15,11 +15,17 @@ class CategoryTodosController < ApplicationController
   end
 
   def create
-    @category_todo = CategoryTodo.create(
-      todo_id: params[:category_todo][:todo_id],
-      category_id: params[:category_todo][:category_id]
-    )
-    redirect_to "/category_todos"
+    if params[:category]
+      cat = Category.find_by(name: params[:category])
+      cat_todo = CategoryTodo.new(todo_id: params[:todo_id], category_id: cat.id)
+      if cat_todo.save
+        print("THAT SHIT SAVED")
+      else
+        print("MY GUY " + cat_todo.errors.full_messages.to_s)
+      end
+    else
+      print("IT AIN'T RUNNING")
+    end
   end
 
   def edit
